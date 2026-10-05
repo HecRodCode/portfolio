@@ -97,40 +97,59 @@
       }
     </section>
 
-    <section id="stack" class="slide stack anchor-target" aria-labelledby="skills-title">
-      <h2 id="skills-title" class="heading-3">{{ 'about.skills.title' | transloco }}</h2>
-      <div class="grid grid-3">
+    <section id="stack" class="slide stack stack-lg anchor-target" aria-labelledby="skills-title">
+      <header class="section-header">
+        <h2 id="skills-title" class="heading-3">{{ 'about.skills.title' | transloco }}</h2>
+        <p class="text-muted">{{ 'about.skills.intro' | transloco }}</p>
+      </header>
+      <ol class="layers list-plain">
         @for (group of skillGroups; track group.key) {
-          <article [class]="'card skill-group skill-group-' + group.tone">
-            <h3 class="card-title">{{ 'about.skills.groups.' + group.key | transloco }}</h3>
+          <li [class]="'layer layer-' + group.tone">
+            <div class="layer-head">
+              <span class="layer-icon" aria-hidden="true"><app-icon [name]="group.icon" /></span>
+              <div>
+                <h3 class="layer-title">
+                  {{ 'about.skills.groups.' + group.key + '.title' | transloco }}
+                </h3>
+                <p class="layer-text">
+                  {{ 'about.skills.groups.' + group.key + '.description' | transloco }}
+                </p>
+              </div>
+            </div>
             <ul class="skill-list list-plain">
               @for (skill of group.items; track skill.name) {
-                <li class="skill" [class.skill-wide]="skill.wide">
+                <li class="skill">
                   <span class="skill-logo" aria-hidden="true">
                     @if (skill.logo) {
                       <img
+                        [class.skill-logo-light]="skill.logoDark"
                         [src]="'images/tech/' + skill.logo + '.svg'"
                         alt=""
                         width="32"
                         height="32"
                         loading="lazy"
                       />
+                      @if (skill.logoDark) {
+                        <img
+                          class="skill-logo-dark"
+                          [src]="'images/tech/' + skill.logoDark + '.svg'"
+                          alt=""
+                          width="32"
+                          height="32"
+                          loading="lazy"
+                        />
+                      }
                     } @else if (skill.icon) {
                       <app-icon [name]="skill.icon" />
                     }
                   </span>
-                  <span class="skill-name">
-                    {{ skill.name }}
-                    @if (skill.note) {
-                      <small class="skill-note">{{ skill.note }}</small>
-                    }
-                  </span>
+                  <span class="skill-name">{{ skill.name }}</span>
                 </li>
               }
             </ul>
-          </article>
+          </li>
         }
-      </div>
+      </ol>
     </section>
 
     <section id="education" class="slide stack anchor-target" aria-labelledby="education-title">

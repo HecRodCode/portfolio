@@ -90,10 +90,24 @@
     "skills": {
       "title": "Tech stack",
       "groups": {
-        "web": "Web",
-        "data": "Data",
-        "infra": "Infra & tools"
-      }
+        "web": {
+          "title": "Web development",
+          "description": "Modern, responsive interfaces."
+        },
+        "backend": {
+          "title": "Backend",
+          "description": "APIs, business logic and services."
+        },
+        "data": {
+          "title": "Data",
+          "description": "Analysis, visualization and data management."
+        },
+        "infra": {
+          "title": "Infrastructure & DevOps",
+          "description": "Deployment, monitoring and infrastructure management."
+        }
+      },
+      "intro": "These are the technologies and tools I build, learn and create solutions with. Always evolving."
     },
     "education": {
       "title": "Education",
