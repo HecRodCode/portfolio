@@ -28,19 +28,19 @@
 }
 
 .btn-primary {
-  background: var(--color-accent-fill);
+  background: var(--color-primary-fill);
   color: var(--color-on-fill);
 }
 .btn-primary:hover {
-  background: var(--red-400);
+  background: var(--color-primary-fill-hover);
 }
 
 .btn-secondary {
-  background: var(--color-accent-2-fill);
+  background: var(--color-secondary-fill);
   color: var(--color-on-fill);
 }
 .btn-secondary:hover {
-  background: var(--blue-400);
+  background: var(--color-secondary-fill-hover);
 }
 
 .btn-outline {
@@ -49,8 +49,8 @@
   color: var(--color-text);
 }
 .btn-outline:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .btn-ghost {

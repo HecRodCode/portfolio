@@ -18,17 +18,17 @@
 
 .card-interactive:hover {
   transform: translateY(-3px);
-  border-color: var(--color-accent-fill);
+  border-color: var(--color-primary-fill);
   box-shadow: var(--shadow-md);
 }
 
 .card-soft {
-  background: var(--color-accent-soft);
+  background: var(--color-primary-soft);
   border-color: transparent;
   box-shadow: none;
 }
 .card-soft-2 {
-  background: var(--color-accent-2-soft);
+  background: var(--color-secondary-soft);
   border-color: transparent;
   box-shadow: none;
 }

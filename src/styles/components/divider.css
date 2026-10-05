@@ -4,9 +4,9 @@
   background: var(--color-border);
 }
 
-.divider-accent {
+.divider-primary {
   width: 3rem;
   height: 3px;
   border-radius: var(--radius-full);
-  background: var(--color-accent-fill);
+  background: var(--color-primary-fill);
 }

@@ -4,9 +4,7 @@
       <div class="stack stack-xs">
         <span class="eyebrow">Design system</span>
         <h1 class="heading-1">Style guide</h1>
-        <p class="lead">
-          Every style used by the portfolio, in one place. Tune the palette and fonts here.
-        </p>
+        <p class="lead">Every style used by the portfolio, in one place.</p>
       </div>
       <div class="cluster">
         <app-language-switcher />
@@ -32,6 +30,27 @@
     </header>
 
     <hr class="divider" />
+
+    <section class="stack" aria-labelledby="palettes">
+      <h2 id="palettes" class="heading-3">Palettes</h2>
+      <p class="text-muted">
+        The visitor picks a pair (shown only as color dots); it becomes the primary and secondary
+        colors of the whole site.
+      </p>
+      <div class="cluster">
+        @for (palette of paletteService.palettes; track palette.id) {
+          <button
+            type="button"
+            class="palette-option"
+            [attr.aria-label]="palette.label"
+            [attr.aria-pressed]="paletteService.palette() === palette.id"
+            (click)="paletteService.set(palette.id)"
+          >
+            <span class="palette-chip" [attr.data-palette]="palette.id" aria-hidden="true"></span>
+          </button>
+        }
+      </div>
+    </section>
 
     <section class="stack" aria-labelledby="colors">
       <h2 id="colors" class="heading-3">Colors</h2>
@@ -116,22 +135,22 @@
           <p class="text-muted">Lifts on hover. For project cards.</p>
           <div class="cluster cluster-sm">
             <span class="tag">Angular</span>
-            <span class="tag tag-red">TypeScript</span>
-            <span class="tag tag-blue">Tailwind</span>
+            <span class="tag tag-primary">TypeScript</span>
+            <span class="tag tag-secondary">Tailwind</span>
           </div>
         </article>
         <article class="card card-soft">
-          <h3 class="card-title">Soft red card</h3>
+          <h3 class="card-title">Soft primary card</h3>
           <p>Pastel background for highlights.</p>
         </article>
         <article class="card card-soft-2">
-          <h3 class="card-title">Soft blue card</h3>
+          <h3 class="card-title">Soft secondary card</h3>
           <p>Pastel background for highlights.</p>
         </article>
       </div>
       <div class="cluster cluster-lg">
-        <a class="link" href="#cards">Accent link</a>
-        <a class="link link-blue" href="#cards">Blue link</a>
+        <a class="link" href="#cards">Primary link</a>
+        <a class="link link-secondary" href="#cards">Secondary link</a>
         <a class="link link-muted" href="#cards">Muted link</a>
       </div>
     </section>

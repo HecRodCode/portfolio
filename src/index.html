@@ -14,6 +14,8 @@
             t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
           }
           if (t === 'dark') document.documentElement.classList.add('dark');
+          var p = localStorage.getItem('palette');
+          if (p && /^[a-z-]+$/.test(p)) document.documentElement.dataset.palette = p;
         } catch (e) {
           document.documentElement.classList.add('dark');
         }

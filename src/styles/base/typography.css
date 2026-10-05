@@ -56,12 +56,12 @@ ol {
   list-style: decimal;
 }
 li::marker {
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 blockquote {
   padding-inline-start: var(--space-4);
-  border-inline-start: 3px solid var(--color-accent-fill);
+  border-inline-start: 3px solid var(--color-primary-fill);
   color: var(--color-muted);
   font-family: var(--font-heading);
   font-style: italic;
@@ -127,11 +127,11 @@ hr {
 .text-muted {
   color: var(--color-muted);
 }
-.text-accent {
-  color: var(--color-accent);
+.text-primary {
+  color: var(--color-primary);
 }
-.text-accent-2 {
-  color: var(--color-accent-2);
+.text-secondary {
+  color: var(--color-secondary);
 }
 .text-small {
   font-size: var(--text-sm);
@@ -148,5 +148,5 @@ hr {
   font-weight: var(--weight-semibold);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-primary);
 }

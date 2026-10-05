@@ -5,8 +5,11 @@ Portfolio web de una sola app Angular, oscuro por defecto, con sidebar de iconos
 La imagen de referencia solo inspira la estructura. No copiar colores, imágenes, logo ni textos de ella; la paleta y la identidad visual aún no están definidas.
 
 ## REGLA CRÍTICA: ramas
-- Antes de empezar a trabajar en cualquier feature/fix/chore, **crear una rama nueva desde `develop`** (`feat/<nombre>`, `fix/<nombre>`, `chore/<nombre>`) y trabajar solo en ella. Nunca trabajar directamente en `develop` ni `main`.
-- **Prohibido hacer commits y abrir PRs**: solo se crean ramas. El usuario hace commit, PR y merge.
+- Una rama por **tema**, no por tarea: `feat/base-styles` (todo lo de estilos), `feat/i18n`, `feat/layout-sidebar`, `feat/home`, `feat/projects`, etc. No crear una rama nueva por cada cambio pequeño.
+- Si el trabajo pertenece a un tema que ya tiene rama, **reutilizar esa rama**: `git switch <rama>` y `git merge --ff-only develop` (tras `git pull` en `develop`) para actualizarla. Solo se crea rama nueva (desde `develop`) cuando es un tema nuevo.
+- Nunca trabajar directamente en `develop` ni `main`. Antes de empezar, comprobar que no hay cambios sin commitear de otro tema.
+- **Prohibido hacer commits y abrir PRs**: solo se gestionan las ramas. El usuario hace commit, PR y merge.
+- Al cerrar un trabajo, dar al usuario el título del commit: una sola línea, en inglés, Conventional Commits (`feat(scope): ...`).
 
 ## Stack
 - Angular 22 (standalone, signals), TypeScript estricto
@@ -53,8 +56,9 @@ La imagen de referencia solo inspira la estructura. No copiar colores, imágenes
 
 ## Tema (dark mode)
 - Clase `dark` en `<html>`, oscuro por defecto; respeta `prefers-color-scheme` en la primera visita y persiste en localStorage.
-- Paleta: rojo y azul en tonos muy suaves (casi pastel) sobre fondos neutros. Solo mediante tokens semánticos (`--color-bg`, `--color-surface`, `--color-text`, `--color-muted`, `--color-accent`, `--color-accent-2`, `--color-border`) con valores distintos en claro y oscuro.
-- Los pasteles van en fondos, bordes y acentos; el texto y los enlaces usan una variante con contraste AA suficiente.
+- Paleta por defecto: rojo + azul, id `red-blue` (rojo primario + azul secundario, intensos pero no oscuros; sin pasteles) sobre neutros fríos. Cada paleta son dos escalas `--primary-50..900` y `--secondary-50..900` (la 500 es el relleno, 600+ texto/enlaces). Los componentes usan solo tokens semánticos (`--color-bg`, `--color-surface`, `--color-text`, `--color-muted`, `--color-primary`, `--color-secondary`, `--color-border`...), nunca nombres de color ni escalas directas.
+- El usuario puede cambiar de paleta (`PaletteService`, atributo `data-palette` en `<html>`, guardada en localStorage). Una paleta nueva = un bloque `[data-palette='id']` en `styles/base/palettes.css` + una entrada en `PALETTES`; el texto blanco sobre `--primary-500`/`--secondary-500` y el texto de enlaces deben cumplir contraste AA (~4.5:1).
+- Etiquetas: `.tag` (estilo ticket con muescas) con `tag-primary`/`tag-secondary`.
 - Comprobar contraste en ambos temas.
 
 ## Sidebar
@@ -78,4 +82,4 @@ La imagen de referencia solo inspira la estructura. No copiar colores, imágenes
 - Presupuestos de build de `angular.json` deben pasar; no subir el límite sin motivo.
 
 ## Git
-- Ramas: `main` (estable, despliega), `develop` (integración), ramas de trabajo desde `develop`. El usuario hace los commits (Conventional Commits: `feat:`, `fix:`, `chore:`, `docs:`) y los PRs.
+- Ramas: `main` (estable, despliega), `develop` (integración), ramas de tema desde `develop`. El usuario hace los commits (Conventional Commits: `feat:`, `fix:`, `chore:`, `docs:`) y los PRs.

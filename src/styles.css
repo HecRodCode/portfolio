@@ -3,6 +3,7 @@
 
 @import './styles/base/fonts.css';
 @import './styles/base/theme.css';
+@import './styles/base/palettes.css';
 @import './styles/base/reset.css';
 @import './styles/base/typography.css';
 @import './styles/base/a11y.css';
@@ -21,4 +22,5 @@
 @import './styles/components/toggle.css';
 @import './styles/components/divider.css';
 @import './styles/components/icon.css';
+@import './styles/components/palette-picker.css';
 @import './styles/components/swatch.css';
