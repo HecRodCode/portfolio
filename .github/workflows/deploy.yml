@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Resolve base href
+        id: base
+        run: |
+          repo="${{ github.event.repository.name }}"
+          owner="${{ github.repository_owner }}"
+          if [ "$repo" = "${owner}.github.io" ]; then
+            echo "href=/" >> "$GITHUB_OUTPUT"
+          else
+            echo "href=/${repo}/" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build
+        run: pnpm build --base-href ${{ steps.base.outputs.href }}
+
+      # SPA fallback: Pages serves 404.html for unknown paths, so deep links like /es/projects/x load the app.
+      - name: SPA fallback and .nojekyll
+        run: |
+          cp dist/portfolio/browser/index.html dist/portfolio/browser/404.html
+          touch dist/portfolio/browser/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/portfolio/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
