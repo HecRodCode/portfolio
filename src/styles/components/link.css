@@ -1,0 +1,30 @@
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklch, currentColor 40%, transparent);
+  text-underline-offset: 0.2em;
+  transition: color var(--duration-fast) var(--ease);
+}
+.link:hover {
+  color: var(--color-accent-hover);
+  text-decoration-color: currentColor;
+}
+
+.link-blue {
+  color: var(--color-accent-2);
+}
+.link-blue:hover {
+  color: var(--color-accent-2-hover);
+}
+
+.link-muted {
+  color: var(--color-muted);
+}
+.link-muted:hover {
+  color: var(--color-text);
+}

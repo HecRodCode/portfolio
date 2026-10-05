@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  max-width: var(--container-lg);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container-md {
+  max-width: var(--container-md);
+}
+.container-sm {
+  max-width: var(--container-sm);
+}

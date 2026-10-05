@@ -1,0 +1,156 @@
+/* Color chips used by the /styles guide page. */
+.swatch {
+  display: flex;
+  align-items: flex-end;
+  min-height: 4rem;
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-on-fill);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+}
+
+.swatch-dark {
+  color: var(--gray-50);
+}
+
+.swatch-red-50 {
+  background: var(--red-50);
+}
+.swatch-red-100 {
+  background: var(--red-100);
+}
+.swatch-red-200 {
+  background: var(--red-200);
+}
+.swatch-red-300 {
+  background: var(--red-300);
+}
+.swatch-red-400 {
+  background: var(--red-400);
+}
+.swatch-red-500 {
+  background: var(--red-500);
+}
+.swatch-red-600 {
+  background: var(--red-600);
+  color: var(--gray-50);
+}
+.swatch-red-700 {
+  background: var(--red-700);
+  color: var(--gray-50);
+}
+.swatch-red-800 {
+  background: var(--red-800);
+  color: var(--gray-50);
+}
+.swatch-red-900 {
+  background: var(--red-900);
+  color: var(--gray-50);
+}
+.swatch-blue-50 {
+  background: var(--blue-50);
+}
+.swatch-blue-100 {
+  background: var(--blue-100);
+}
+.swatch-blue-200 {
+  background: var(--blue-200);
+}
+.swatch-blue-300 {
+  background: var(--blue-300);
+}
+.swatch-blue-400 {
+  background: var(--blue-400);
+}
+.swatch-blue-500 {
+  background: var(--blue-500);
+}
+.swatch-blue-600 {
+  background: var(--blue-600);
+  color: var(--gray-50);
+}
+.swatch-blue-700 {
+  background: var(--blue-700);
+  color: var(--gray-50);
+}
+.swatch-blue-800 {
+  background: var(--blue-800);
+  color: var(--gray-50);
+}
+.swatch-blue-900 {
+  background: var(--blue-900);
+  color: var(--gray-50);
+}
+.swatch-gray-50 {
+  background: var(--gray-50);
+}
+.swatch-gray-100 {
+  background: var(--gray-100);
+}
+.swatch-gray-200 {
+  background: var(--gray-200);
+}
+.swatch-gray-300 {
+  background: var(--gray-300);
+}
+.swatch-gray-400 {
+  background: var(--gray-400);
+}
+.swatch-gray-500 {
+  background: var(--gray-500);
+}
+.swatch-gray-600 {
+  background: var(--gray-600);
+  color: var(--gray-50);
+}
+.swatch-gray-700 {
+  background: var(--gray-700);
+  color: var(--gray-50);
+}
+.swatch-gray-800 {
+  background: var(--gray-800);
+  color: var(--gray-50);
+}
+.swatch-gray-900 {
+  background: var(--gray-900);
+  color: var(--gray-50);
+}
+
+.swatch-token-bg {
+  background: var(--color-bg);
+}
+.swatch-token-surface {
+  background: var(--color-surface);
+}
+.swatch-token-surface-2 {
+  background: var(--color-surface-2);
+}
+.swatch-token-accent {
+  background: var(--color-accent);
+}
+.swatch-token-accent-fill {
+  background: var(--color-accent-fill);
+}
+.swatch-token-accent-soft {
+  background: var(--color-accent-soft);
+}
+.swatch-token-accent-2 {
+  background: var(--color-accent-2);
+}
+.swatch-token-accent-2-fill {
+  background: var(--color-accent-2-fill);
+}
+.swatch-token-accent-2-soft {
+  background: var(--color-accent-2-soft);
+}
+.swatch-token-border {
+  background: var(--color-border);
+}
+.swatch-token-muted {
+  background: var(--color-muted);
+}
+.swatch-token-text {
+  background: var(--color-text);
+}
