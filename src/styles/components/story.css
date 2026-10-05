@@ -1,0 +1,22 @@
+/* Story block: a small icon and heading with its paragraph indented underneath */
+.story-block {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: var(--space-3);
+  row-gap: var(--space-1);
+  align-items: center;
+}
+
+.story-block-icon {
+  display: inline-flex;
+  color: var(--color-primary);
+}
+
+.story-block-title {
+  font-size: var(--text-lg);
+}
+
+.story-block-text {
+  grid-column: 2;
+  color: var(--color-muted);
+}

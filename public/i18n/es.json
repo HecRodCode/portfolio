@@ -33,12 +33,40 @@
     "photoAlt": "Retrato de Héctor Ríos"
   },
   "about": {
-    "eyebrow": "Quién soy",
     "title": "Sobre mí",
     "story": {
-      "p1": "Mi nombre es Héctor Ríos, tengo 20 años y soy de Medellín. La informática me encanta desde que tengo memoria, y con los años esa curiosidad se volvió el camino que quiero seguir.",
-      "p2": "Empecé en el desarrollo web, aprendiendo a construir interfaces, conectar sistemas y llevar una idea a algo funcional que la gente pudiera usar. Mientras avanzaba, descubrí el mundo de los datos y me fascinó: entender qué hay detrás de la información, cómo se organiza y qué se puede sacar de ella.",
-      "p3": "Hoy estoy en la ruta avanzada de Análisis de Datos en Riwi, donde además fortalezco mis habilidades blandas, mi manejo emocional y mi inglés. Fuera de las clases sigo aprendiendo por mi cuenta: soy bastante autodidacta, así que si algo me genera curiosidad, no descanso hasta entender cómo funciona."
+      "p1": "Tengo 20 años y soy de Medellín. La informática me ha acompañado desde hace muchos años y, con el tiempo, esa curiosidad se convirtió en el camino que quiero seguir.",
+      "path": {
+        "title": "Cómo empecé",
+        "text": "Empecé en el desarrollo web con una curiosidad bastante simple: quería entender cómo se construían las cosas que veía en internet. Mi primer contacto con la informática fue estudiando un Técnico en Sistemas en el SENA. Mientras más aprendía, más me interesaba entender qué había detrás de todo: cómo se conectan los sistemas y qué ocurre con la información. Esa curiosidad me llevó a dar mis primeros pasos como desarrollador backend."
+      },
+      "data": {
+        "title": "Descubrir los datos",
+        "textBefore": "Más adelante, durante mi formación en ",
+        "link": "Riwi",
+        "textAfter": ", un centro de entrenamiento en tecnología, descubrí el mundo de los datos. Empecé a interesarme por cómo se organiza la información y cómo puede utilizarse para entender mejor un problema."
+      }
+    },
+    "journey": {
+      "title": "Mi recorrido",
+      "steps": {
+        "web": {
+          "title": "Desarrollo web",
+          "detail": "Interfaces · Angular"
+        },
+        "backend": {
+          "title": "Backend",
+          "detail": "APIs · Node · Nest"
+        },
+        "data": {
+          "title": "Datos",
+          "detail": "SQL · Python · BI"
+        },
+        "cloud": {
+          "title": "Cloud / Infraestructura",
+          "detail": "Linux · CI/CD · OVH · Cloudflare"
+        }
+      }
     },
     "facts": {
       "title": "De un vistazo",

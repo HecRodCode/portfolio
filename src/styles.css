@@ -31,6 +31,8 @@
 @import './styles/components/icon.css';
 @import './styles/components/palette-picker.css';
 @import './styles/components/facts.css';
+@import './styles/components/story.css';
+@import './styles/components/journey.css';
 @import './styles/components/skill.css';
 @import './styles/components/timeline.css';
 @import './styles/components/toc.css';

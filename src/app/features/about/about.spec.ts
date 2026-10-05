@@ -19,7 +19,8 @@ describe('About', () => {
     const root = await render();
 
     expect(root.querySelector('h1')).not.toBeNull();
-    expect(root.querySelectorAll('.split p').length).toBe(3);
+    expect(root.querySelectorAll('.story-block').length).toBe(2);
+    expect(root.querySelectorAll('.journey-step').length).toBe(4);
     expect(root.querySelectorAll('.facts-row').length).toBe(4);
     expect(root.querySelectorAll('.facts-icon svg').length).toBe(4);
 

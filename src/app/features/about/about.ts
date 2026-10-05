@@ -32,6 +32,17 @@ export class About {
 
   protected readonly skillGroups = SKILL_GROUPS;
   protected readonly experience = EXPERIENCE;
+  protected readonly riwiUrl = 'https://riwi.io/';
+  protected readonly storyBlocks = [
+    { key: 'path', icon: 'user' },
+    { key: 'data', icon: 'bar-chart' },
+  ] as const;
+  protected readonly journey = [
+    { key: 'web', icon: 'laptop' },
+    { key: 'backend', icon: 'server' },
+    { key: 'data', icon: 'database' },
+    { key: 'cloud', icon: 'cloud' },
+  ] as const;
   protected readonly facts = [
     { key: 'location', icon: 'map-pin' },
     { key: 'studying', icon: 'graduation-cap' },
