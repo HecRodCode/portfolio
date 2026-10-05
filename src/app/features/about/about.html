@@ -19,9 +19,9 @@
               <p class="story-block-text">
                 @if (block.key === 'data') {
                   {{ 'about.story.data.textBefore' | transloco
-                  }}<a class="link" [href]="riwiUrl" target="_blank" rel="noopener noreferrer">{{
-                    'about.story.data.link' | transloco
-                  }}</a
+                  }}<a class="link" appExternalLink [href]="riwiUrl"
+                    >{{ 'about.story.data.link' | transloco
+                    }}<span class="visually-hidden">{{ 'a11y.newTab' | transloco }}</span></a
                   >{{ 'about.story.data.textAfter' | transloco }}
                 } @else {
                   {{ 'about.story.' + block.key + '.text' | transloco }}

@@ -150,5 +150,14 @@
   "placeholder": {
     "soon": "This section is under construction."
   },
-  "skip": "Skip to content"
+  "skip": "Skip to content",
+  "a11y": {
+    "newTab": "(opens in a new tab)"
+  },
+  "externalDialog": {
+    "title": "You're leaving this site",
+    "text": "{{host}} will open in a new tab. Do you want to continue?",
+    "cancel": "Stay here",
+    "confirm": "Continue"
+  }
 }

@@ -150,5 +150,14 @@
   "placeholder": {
     "soon": "Esta sección está en construcción."
   },
-  "skip": "Saltar al contenido"
+  "skip": "Saltar al contenido",
+  "a11y": {
+    "newTab": "(se abre en una pestaña nueva)"
+  },
+  "externalDialog": {
+    "title": "Vas a salir de este sitio",
+    "text": "Se abrirá {{host}} en una pestaña nueva. ¿Quieres continuar?",
+    "cancel": "Quedarme aquí",
+    "confirm": "Continuar"
+  }
 }
