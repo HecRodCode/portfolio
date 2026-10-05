@@ -21,7 +21,17 @@
   "language": {
     "toggle": "Change language"
   },
-  "home": {},
+  "home": {
+    "greeting": "Hi, I'm",
+    "role": "Web & data developer",
+    "intro": "I've loved computers for as long as I can remember, and over the years it became my job. Away from the screen, you'll find me on my bike or surrounded by cats :)",
+    "cta": {
+      "about": "About me",
+      "projects": "View projects",
+      "contact": "Contact me"
+    },
+    "photoAlt": "Portrait of Héctor Ríos"
+  },
   "about": {},
   "projects": {},
   "contact": {},

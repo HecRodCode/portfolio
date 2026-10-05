@@ -76,3 +76,22 @@
   padding: 0;
   border-radius: var(--radius-full);
 }
+
+/* Soft colored shadow under a filled button; lifts on hover */
+.btn-shadow {
+  box-shadow: 0 0.5rem 1.25rem color-mix(in oklch, var(--color-primary-fill) 45%, transparent);
+}
+
+.btn-shadow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.75rem 1.5rem color-mix(in oklch, var(--color-primary-fill) 55%, transparent);
+}
+
+/* Trailing arrow icon that nudges forward on hover */
+.btn-arrow app-icon {
+  transition: transform var(--duration) var(--ease-smooth);
+}
+
+.btn-arrow:hover app-icon {
+  transform: translateX(0.25rem);
+}

@@ -13,7 +13,11 @@ export const routes: Routes = [
     loadComponent: () => import('./layout/shell/shell').then((m) => m.Shell),
     children: [
       // Temporary pages: each section replaces its placeholder in its own feature branch.
-      { path: '', pathMatch: 'full', loadComponent: placeholder, data: { titleKey: 'nav.home' } },
+      {
+        path: '',
+        pathMatch: 'full',
+        loadComponent: () => import('./features/home/home').then((m) => m.Home),
+      },
       { path: 'about', loadComponent: placeholder, data: { titleKey: 'nav.about' } },
       { path: 'projects', loadComponent: placeholder, data: { titleKey: 'nav.projects' } },
       { path: 'contact', loadComponent: placeholder, data: { titleKey: 'nav.contact' } },

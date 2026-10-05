@@ -1,0 +1,46 @@
+<section class="hero container">
+  <figure class="hero-photo">
+    <picture>
+      <source
+        type="image/avif"
+        srcset="images/profile-480.avif 480w, images/profile-960.avif 960w"
+        [attr.sizes]="photoSizes"
+      />
+      <source
+        type="image/webp"
+        srcset="images/profile-480.webp 480w, images/profile-960.webp 960w"
+        [attr.sizes]="photoSizes"
+      />
+      <img
+        class="hero-photo-img"
+        src="images/profile-960.webp"
+        [attr.sizes]="photoSizes"
+        width="960"
+        height="1200"
+        fetchpriority="high"
+        [alt]="'home.photoAlt' | transloco"
+      />
+    </picture>
+  </figure>
+
+  <div class="hero-content stack stack-lg">
+    <div class="stack stack-sm">
+      <span class="eyebrow">{{ 'home.greeting' | transloco }}</span>
+      <h1 class="heading-display">{{ site.name }}</h1>
+      <p class="heading-3 text-primary">{{ 'home.role' | transloco }}</p>
+    </div>
+    <p class="lead">{{ 'home.intro' | transloco }}</p>
+    <div class="cluster">
+      <a class="btn btn-primary btn-lg btn-shadow btn-arrow" [routerLink]="['/', lang(), 'about']">
+        {{ 'home.cta.about' | transloco }}
+        <app-icon name="arrow-right" />
+      </a>
+      <a class="btn btn-outline btn-lg" [routerLink]="['/', lang(), 'projects']">
+        {{ 'home.cta.projects' | transloco }}
+      </a>
+      <a class="btn btn-outline btn-lg" [routerLink]="['/', lang(), 'contact']">
+        {{ 'home.cta.contact' | transloco }}
+      </a>
+    </div>
+  </div>
+</section>
