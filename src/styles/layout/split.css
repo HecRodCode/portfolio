@@ -11,3 +11,9 @@
     gap: var(--space-8);
   }
 }
+
+@media (min-width: 64rem) and (max-height: 50rem) {
+  .split {
+    gap: var(--space-5) var(--space-8);
+  }
+}
