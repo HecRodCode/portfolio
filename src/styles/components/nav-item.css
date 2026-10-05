@@ -21,8 +21,8 @@
 
 .nav-item.is-active,
 .nav-item[aria-current='page'] {
-  background: var(--color-accent-soft);
-  color: var(--color-accent);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
 }
 
 .nav-item-label {

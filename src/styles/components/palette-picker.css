@@ -1,0 +1,28 @@
+/* Palette chooser: a round button showing only a two-color chip (no visible name; the name is the aria-label).
+   The chip scopes its own palette through data-palette, so it shows its colors whatever palette is active. */
+.palette-option {
+  display: inline-flex;
+  padding: var(--space-1);
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition:
+    border-color var(--duration-fast) var(--ease),
+    transform var(--duration-fast) var(--ease);
+}
+
+.palette-option:hover {
+  transform: scale(1.08);
+}
+
+.palette-option[aria-pressed='true'] {
+  border-color: var(--color-text);
+}
+
+.palette-chip {
+  width: 1.75rem;
+  height: 1.75rem;
+  flex: none;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary-500) 50%, var(--secondary-500) 50%);
+}

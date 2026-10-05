@@ -25,6 +25,6 @@
 }
 .toggle-option[aria-pressed='true'],
 .toggle-option.is-active {
-  background: var(--color-accent-fill);
+  background: var(--color-primary-fill);
   color: var(--color-on-fill);
 }

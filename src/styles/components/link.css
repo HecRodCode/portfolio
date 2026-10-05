@@ -4,22 +4,22 @@ a {
 }
 
 .link {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: underline;
   text-decoration-color: color-mix(in oklch, currentColor 40%, transparent);
   text-underline-offset: 0.2em;
   transition: color var(--duration-fast) var(--ease);
 }
 .link:hover {
-  color: var(--color-accent-hover);
+  color: var(--color-primary-hover);
   text-decoration-color: currentColor;
 }
 
-.link-blue {
-  color: var(--color-accent-2);
+.link-secondary {
+  color: var(--color-secondary);
 }
-.link-blue:hover {
-  color: var(--color-accent-2-hover);
+.link-secondary:hover {
+  color: var(--color-secondary-hover);
 }
 
 .link-muted {
