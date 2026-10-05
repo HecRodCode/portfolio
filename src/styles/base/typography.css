@@ -159,3 +159,10 @@ hr {
   text-transform: uppercase;
   color: var(--color-primary);
 }
+
+/* Short screens: a smaller page title leaves room for the content */
+@media (min-width: 64rem) and (max-height: 46rem) {
+  .heading-1 {
+    font-size: var(--text-3xl);
+  }
+}

@@ -1,19 +1,4 @@
 /* Mobile: the sidebar is replaced by a top bar with a hamburger that opens a full-screen menu. */
-.sidebar-brand {
-  display: grid;
-  place-items: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  flex: none;
-  border-radius: var(--radius-md);
-  background: var(--color-primary-fill);
-  color: var(--color-on-fill);
-  font-family: var(--font-heading);
-  font-size: var(--text-lg);
-  font-weight: var(--weight-bold);
-  letter-spacing: var(--tracking-tight);
-}
-
 .mobile-bar {
   display: none;
 }
@@ -33,7 +18,7 @@
 .mobile-menu-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .mobile-menu .nav-item {
@@ -56,7 +41,7 @@
     z-index: var(--z-sidebar);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: var(--space-3) var(--gutter);
     border-bottom: 1px solid var(--color-border);
     background: color-mix(in oklch, var(--color-bg) 88%, transparent);

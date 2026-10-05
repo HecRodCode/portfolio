@@ -1,7 +1,4 @@
 <header class="mobile-bar">
-  <a class="sidebar-brand" [routerLink]="['/', lang()]" [attr.aria-label]="site.name">
-    {{ site.initials }}
-  </a>
   <button
     #openButton
     type="button"
@@ -24,7 +21,6 @@
     [attr.aria-label]="'sidebar.menu' | transloco"
   >
     <div class="mobile-menu-top">
-      <span class="sidebar-brand" aria-hidden="true">{{ site.initials }}</span>
       <button
         #closeButton
         type="button"

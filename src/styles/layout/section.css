@@ -38,3 +38,10 @@
     padding-block: var(--space-6);
   }
 }
+
+@media (min-width: 64rem) and (max-height: 50rem) {
+  .slide,
+  .slide.anchor-target {
+    padding-block: var(--space-6);
+  }
+}
