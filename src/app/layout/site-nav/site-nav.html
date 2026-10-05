@@ -1,0 +1,15 @@
+<nav class="site-nav" [attr.aria-label]="'nav.label' | transloco">
+  @for (item of items; track item.key) {
+    <a
+      class="nav-item"
+      routerLinkActive="is-active"
+      ariaCurrentWhenActive="page"
+      [routerLinkActiveOptions]="{ exact: item.path === '' }"
+      [routerLink]="link(item)"
+      (click)="navigated.emit()"
+    >
+      <app-icon [name]="item.icon" />
+      <span class="nav-item-label">{{ 'nav.' + item.key | transloco }}</span>
+    </a>
+  }
+</nav>

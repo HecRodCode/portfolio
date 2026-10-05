@@ -1,0 +1,13 @@
+<div class="palette-list" role="group" [attr.aria-label]="'palette.label' | transloco">
+  @for (palette of paletteService.palettes; track palette.id) {
+    <button
+      type="button"
+      class="palette-option"
+      [attr.aria-label]="'palette.options.' + palette.id | transloco"
+      [attr.aria-pressed]="paletteService.palette() === palette.id"
+      (click)="paletteService.set(palette.id); chosen.emit()"
+    >
+      <span class="palette-chip" [attr.data-palette]="palette.id" aria-hidden="true"></span>
+    </button>
+  }
+</div>

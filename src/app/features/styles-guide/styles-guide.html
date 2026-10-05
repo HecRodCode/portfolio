@@ -1,0 +1,177 @@
+<div class="section">
+  <div class="container stack-xl stack">
+    <header class="cluster cluster-between">
+      <div class="stack stack-xs">
+        <span class="eyebrow">Design system</span>
+        <h1 class="heading-1">Style guide</h1>
+        <p class="lead">Every style used by the portfolio, in one place.</p>
+      </div>
+      <div class="cluster">
+        <app-language-switcher />
+        <div class="toggle" role="group" aria-label="Theme">
+          <button
+            type="button"
+            class="toggle-option"
+            [attr.aria-pressed]="themeService.theme() === 'light'"
+            (click)="themeService.set('light')"
+          >
+            Light
+          </button>
+          <button
+            type="button"
+            class="toggle-option"
+            [attr.aria-pressed]="themeService.theme() === 'dark'"
+            (click)="themeService.set('dark')"
+          >
+            Dark
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <hr class="divider" />
+
+    <section class="stack" aria-labelledby="palettes">
+      <h2 id="palettes" class="heading-3">Palettes</h2>
+      <p class="text-muted">
+        The visitor picks a pair (shown only as color dots); it becomes the primary and secondary
+        colors of the whole site.
+      </p>
+      <div class="cluster">
+        @for (palette of paletteService.palettes; track palette.id) {
+          <button
+            type="button"
+            class="palette-option"
+            [attr.aria-label]="palette.label"
+            [attr.aria-pressed]="paletteService.palette() === palette.id"
+            (click)="paletteService.set(palette.id)"
+          >
+            <span class="palette-chip" [attr.data-palette]="palette.id" aria-hidden="true"></span>
+          </button>
+        }
+      </div>
+    </section>
+
+    <section class="stack" aria-labelledby="colors">
+      <h2 id="colors" class="heading-3">Colors</h2>
+      @for (scale of scales; track scale.title) {
+        <div class="stack stack-sm">
+          <h3 class="heading-4">{{ scale.title }}</h3>
+          <div class="grid grid-4">
+            @for (swatch of scale.swatches; track swatch.name) {
+              <div class="stack stack-xs">
+                <div [class]="'swatch ' + swatch.cssClass"></div>
+                <small class="text-muted text-mono">{{ swatch.name }}</small>
+              </div>
+            }
+          </div>
+        </div>
+      }
+      <div class="stack stack-sm">
+        <h3 class="heading-4">Semantic tokens (change with the theme)</h3>
+        <div class="grid grid-4">
+          @for (token of tokens; track token.name) {
+            <div class="stack stack-xs">
+              <div [class]="'swatch ' + token.cssClass"></div>
+              <small class="text-muted text-mono">{{ token.name }}</small>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="stack" aria-labelledby="type">
+      <h2 id="type" class="heading-3">Typography</h2>
+      <p class="heading-display">Display</p>
+      <h1>Heading 1 &ndash; Lora</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <p class="lead">Lead paragraph in Open Sans. Good for the short intro under a heading.</p>
+      <p>
+        Body text in Open Sans. A portfolio is mostly read, so the body keeps a comfortable line
+        length and generous line height. Here is an <a class="link" href="#type">inline link</a>,
+        some <strong>bold text</strong> and <code>inline code</code>.
+      </p>
+      <p class="text-muted text-small">Muted small text for captions and metadata.</p>
+      <blockquote>A quote or a short highlighted statement.</blockquote>
+      <ul>
+        <li>Unordered list item</li>
+        <li>Another item</li>
+      </ul>
+      <pre><code>const greeting = 'Hello, world';</code></pre>
+    </section>
+
+    <section class="stack" aria-labelledby="buttons">
+      <h2 id="buttons" class="heading-3">Buttons</h2>
+      <div class="cluster">
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn btn-outline">Outline</button>
+        <button type="button" class="btn btn-ghost">Ghost</button>
+        <button type="button" class="btn btn-primary" disabled>Disabled</button>
+      </div>
+      <div class="cluster">
+        <button type="button" class="btn btn-primary btn-sm">Small</button>
+        <button type="button" class="btn btn-primary">Default</button>
+        <button type="button" class="btn btn-primary btn-lg">Large</button>
+        <button type="button" class="btn btn-outline btn-icon" aria-label="Example icon button">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="stack" aria-labelledby="cards">
+      <h2 id="cards" class="heading-3">Cards, tags and links</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3 class="card-title">Plain card</h3>
+          <p class="text-muted">Surface with border and soft shadow.</p>
+        </article>
+        <article class="card card-interactive">
+          <h3 class="card-title">Interactive card</h3>
+          <p class="text-muted">Lifts on hover. For project cards.</p>
+          <div class="cluster cluster-sm">
+            <span class="tag">Angular</span>
+            <span class="tag tag-primary">TypeScript</span>
+            <span class="tag tag-secondary">Tailwind</span>
+          </div>
+        </article>
+        <article class="card card-soft">
+          <h3 class="card-title">Soft primary card</h3>
+          <p>Pastel background for highlights.</p>
+        </article>
+        <article class="card card-soft-2">
+          <h3 class="card-title">Soft secondary card</h3>
+          <p>Pastel background for highlights.</p>
+        </article>
+      </div>
+      <div class="cluster cluster-lg">
+        <a class="link" href="#cards">Primary link</a>
+        <a class="link link-secondary" href="#cards">Secondary link</a>
+        <a class="link link-muted" href="#cards">Muted link</a>
+      </div>
+    </section>
+
+    <section class="stack" aria-labelledby="nav">
+      <h2 id="nav" class="heading-3">Navigation items</h2>
+      <nav class="stack stack-xs" aria-label="Example navigation">
+        <a class="nav-item is-active" href="#nav" aria-current="page">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 11l8-7 8 7v9H4z" />
+          </svg>
+          <span class="nav-item-label">Home</span>
+        </a>
+        <a class="nav-item" href="#nav">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c1-4 4-6 8-6s7 2 8 6" />
+          </svg>
+          <span class="nav-item-label">About</span>
+        </a>
+      </nav>
+    </section>
+  </div>
+</div>

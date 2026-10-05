@@ -1,0 +1,12 @@
+.divider {
+  height: 1px;
+  border: 0;
+  background: var(--color-border);
+}
+
+.divider-primary {
+  width: 3rem;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-fill);
+}

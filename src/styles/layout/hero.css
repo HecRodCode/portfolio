@@ -1,0 +1,81 @@
+.hero {
+  display: grid;
+  align-items: center;
+  gap: var(--space-7);
+  min-height: 100dvh;
+  padding-block: var(--space-8);
+}
+
+.hero-content {
+  max-width: 40rem;
+}
+
+/* Portrait: rounded photo over two offset color blocks taken from the active palette */
+.hero-photo {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 18rem);
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  justify-self: center;
+}
+
+.hero-photo::before,
+.hero-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: var(--radius-xl);
+}
+
+.hero-photo::before {
+  background: var(--color-primary-fill);
+  transform: translate(1.1rem, 1.1rem) rotate(3deg);
+}
+
+.hero-photo::after {
+  background: var(--color-secondary-fill);
+  transform: translate(-1.1rem, -0.6rem) rotate(-3deg);
+}
+
+.hero-photo picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-photo-img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+  object-position: center top;
+}
+
+@media (min-width: 64rem) {
+  .hero {
+    grid-template-columns: 1.1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .hero-photo {
+    width: min(100%, 26rem);
+    order: 2;
+  }
+}
+
+/* Extra room on large screens: a bigger portrait */
+@media (min-width: 90rem) {
+  .hero-photo {
+    width: min(100%, 30rem);
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .hero {
+    min-height: auto;
+    padding-block: var(--space-7);
+  }
+}

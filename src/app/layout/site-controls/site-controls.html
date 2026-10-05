@@ -1,0 +1,16 @@
+<div class="site-controls" [class.site-controls-compact]="compact()">
+  @if (!compact()) {
+    <app-palette-picker />
+  }
+  <div class="site-controls-row">
+    <button
+      type="button"
+      class="btn btn-ghost btn-icon"
+      [attr.aria-label]="'theme.toggle' | transloco"
+      (click)="themeService.toggle()"
+    >
+      <app-icon [name]="themeService.theme() === 'dark' ? 'sun' : 'moon'" />
+    </button>
+    <app-language-switcher />
+  </div>
+</div>

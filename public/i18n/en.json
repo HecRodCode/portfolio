@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "label": "Main navigation"
+  },
+  "sidebar": {
+    "pin": "Pin sidebar",
+    "unpin": "Unpin sidebar",
+    "open": "Open menu",
+    "close": "Close menu",
+    "menu": "Menu"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "toggle": "Change language"
+  },
+  "home": {
+    "greeting": "Hi, I'm",
+    "role": "Web & data developer",
+    "intro": "I've loved computers for as long as I can remember, and over the years it became my job. Away from the screen, you'll find me on my bike or surrounded by cats :)",
+    "cta": {
+      "about": "About me",
+      "projects": "View projects",
+      "contact": "Contact me"
+    },
+    "photoAlt": "Portrait of Héctor Ríos"
+  },
+  "about": {},
+  "projects": {},
+  "contact": {},
+  "cv": {
+    "download": "Download CV"
+  },
+  "palette": {
+    "label": "Color palette",
+    "options": {
+      "red-blue": "Red and blue",
+      "teal-coral": "Teal and coral",
+      "indigo-rose": "Indigo and rose",
+      "forest-terracotta": "Forest green and terracotta",
+      "plum-ochre": "Plum and ochre",
+      "slate-tangerine": "Slate and tangerine",
+      "cobalt-mint": "Cobalt and mint"
+    }
+  },
+  "placeholder": {
+    "soon": "This section is under construction."
+  },
+  "skip": "Skip to content"
+}

@@ -1,0 +1,27 @@
+/* Ticket-stub label: solid fill with half-circle notches on both sides. */
+.tag {
+  --tag-fill: var(--color-surface-2);
+  --tag-on: var(--color-text);
+  --tag-notch: 0.32rem;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-4);
+  background: var(--tag-fill);
+  color: var(--tag-on);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  line-height: 1.5;
+  mask:
+    radial-gradient(circle var(--tag-notch) at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle var(--tag-notch) at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat;
+}
+
+.tag-primary {
+  --tag-fill: var(--color-primary-fill);
+  --tag-on: var(--color-on-fill);
+}
+
+.tag-secondary {
+  --tag-fill: var(--color-secondary-fill);
+  --tag-on: var(--color-on-fill);
+}

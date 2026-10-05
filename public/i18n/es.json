@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "label": "Navegación principal"
+  },
+  "sidebar": {
+    "pin": "Fijar barra lateral",
+    "unpin": "Soltar barra lateral",
+    "open": "Abrir menú",
+    "close": "Cerrar menú",
+    "menu": "Menú"
+  },
+  "theme": {
+    "toggle": "Cambiar tema",
+    "light": "Claro",
+    "dark": "Oscuro"
+  },
+  "language": {
+    "toggle": "Cambiar idioma"
+  },
+  "home": {
+    "greeting": "Hola, soy",
+    "role": "Desarrollador web y de datos",
+    "intro": "La informática me encanta desde que tengo memoria, y con los años se volvió mi trabajo. Fuera de la pantalla me encuentras en la bici o rodeado de gatos :)",
+    "cta": {
+      "about": "Sobre mí",
+      "projects": "Ver proyectos",
+      "contact": "Contacto"
+    },
+    "photoAlt": "Retrato de Héctor Ríos"
+  },
+  "about": {},
+  "projects": {},
+  "contact": {},
+  "cv": {
+    "download": "Descargar CV"
+  },
+  "palette": {
+    "label": "Paleta de colores",
+    "options": {
+      "red-blue": "Rojo y azul",
+      "teal-coral": "Turquesa y coral",
+      "indigo-rose": "Índigo y rosa",
+      "forest-terracotta": "Verde bosque y terracota",
+      "plum-ochre": "Ciruela y ocre",
+      "slate-tangerine": "Pizarra y mandarina",
+      "cobalt-mint": "Cobalto y menta"
+    }
+  },
+  "placeholder": {
+    "soon": "Esta sección está en construcción."
+  },
+  "skip": "Saltar al contenido"
+}
