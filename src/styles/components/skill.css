@@ -1,45 +1,151 @@
-/* Technology tile: brand logo on a light chip + name. The group card carries the palette accent. */
-.skill-group {
-  border-top: 4px solid var(--color-border-strong);
+/* Stack as architecture layers: stacked bands tied together by a dashed line, like a pipeline. The head
+   (icon, title, blurb) is a diagonal two-color banner in the active palette, echoing the "at a glance"
+   card; the logos sit on the surface beside it. Tones swap which color leads. */
+.layers {
+  --layer-pad: var(--space-5);
+  --layer-gap: var(--space-5);
+  --wave-width: 3.5rem;
+  --wave-band: 5.5rem;
+  /* Shapes only (the color comes from the element's background): a diagonal wave edge, solid on one side */
+  --wave-edge-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0 L22.0 0.0 L22.19 1.67 L22.35 3.33 L22.47 5.0 L22.52 6.67 L22.5 8.33 L22.38 10.0 L22.15 11.67 L21.82 13.33 L21.38 15.0 L20.83 16.67 L20.19 18.33 L19.47 20.0 L18.68 21.67 L17.85 23.33 L17.0 25.0 L16.15 26.67 L15.32 28.33 L14.53 30.0 L13.81 31.67 L13.17 33.33 L12.62 35.0 L12.18 36.67 L11.85 38.33 L11.62 40.0 L11.5 41.67 L11.48 43.33 L11.53 45.0 L11.65 46.67 L11.81 48.33 L12.0 50.0 L12.19 51.67 L12.35 53.33 L12.47 55.0 L12.52 56.67 L12.5 58.33 L12.38 60.0 L12.15 61.67 L11.82 63.33 L11.38 65.0 L10.83 66.67 L10.19 68.33 L9.47 70.0 L8.68 71.67 L7.85 73.33 L7.0 75.0 L6.15 76.67 L5.32 78.33 L4.53 80.0 L3.81 81.67 L3.17 83.33 L2.62 85.0 L2.18 86.67 L1.85 88.33 L1.62 90.0 L1.5 91.67 L1.48 93.33 L1.53 95.0 L1.65 96.67 L1.81 98.33 L2.0 100.0 L0 100Z'/%3E%3C/svg%3E");
+  --wave-edge-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 100' preserveAspectRatio='none'%3E%3Cpath d='M24 0 L22.0 0.0 L22.19 1.67 L22.35 3.33 L22.47 5.0 L22.52 6.67 L22.5 8.33 L22.38 10.0 L22.15 11.67 L21.82 13.33 L21.38 15.0 L20.83 16.67 L20.19 18.33 L19.47 20.0 L18.68 21.67 L17.85 23.33 L17.0 25.0 L16.15 26.67 L15.32 28.33 L14.53 30.0 L13.81 31.67 L13.17 33.33 L12.62 35.0 L12.18 36.67 L11.85 38.33 L11.62 40.0 L11.5 41.67 L11.48 43.33 L11.53 45.0 L11.65 46.67 L11.81 48.33 L12.0 50.0 L12.19 51.67 L12.35 53.33 L12.47 55.0 L12.52 56.67 L12.5 58.33 L12.38 60.0 L12.15 61.67 L11.82 63.33 L11.38 65.0 L10.83 66.67 L10.19 68.33 L9.47 70.0 L8.68 71.67 L7.85 73.33 L7.0 75.0 L6.15 76.67 L5.32 78.33 L4.53 80.0 L3.81 81.67 L3.17 83.33 L2.62 85.0 L2.18 86.67 L1.85 88.33 L1.62 90.0 L1.5 91.67 L1.48 93.33 L1.53 95.0 L1.65 96.67 L1.81 98.33 L2.0 100.0 L24 100Z'/%3E%3C/svg%3E");
+  display: flex;
+  flex-direction: column;
+  gap: var(--layer-gap);
 }
 
-.skill-group-primary {
-  border-top-color: var(--color-primary-fill);
+.layer {
+  position: relative;
+  display: grid;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
 }
 
-.skill-group-secondary {
-  border-top-color: var(--color-secondary-fill);
+/* Dashed link down to the next layer, under the icon badge */
+.layer:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  inset-block-start: 100%;
+  inset-inline-start: calc(var(--layer-pad) + 1.375rem);
+  height: var(--layer-gap);
+  border-inline-start: 2px dashed var(--color-muted);
+}
+
+.layer-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--layer-pad);
+  border-radius: calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px) 0 0;
+  background: linear-gradient(
+    105deg,
+    var(--color-primary-fill) 0 88%,
+    var(--color-secondary-fill) 88% 100%
+  );
+  color: var(--color-on-fill);
+}
+
+.layer-secondary .layer-head {
+  background: linear-gradient(
+    105deg,
+    var(--color-secondary-fill) 0 88%,
+    var(--color-primary-fill) 88% 100%
+  );
+}
+
+.layer-icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: none;
+  border-radius: var(--radius-md);
+  background: color-mix(in oklch, var(--color-on-fill) 22%, transparent);
+}
+
+.layer-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+}
+
+.layer-text {
+  font-size: var(--text-sm);
+  opacity: 0.9;
+}
+
+.layer .skill-list {
+  padding: var(--layer-pad);
+}
+
+@media (min-width: 64rem) {
+  .layer {
+    grid-template-columns: 32rem 1fr;
+    align-items: center;
+  }
+
+  /* Head: one flat color with a wavy right edge, plus a band of the other color riding the wave */
+  .layer-head,
+  .layer-secondary .layer-head {
+    position: relative;
+    align-self: stretch;
+    padding-inline-end: calc(var(--layer-pad) + var(--wave-band));
+    border-radius: calc(var(--radius-lg) - 1px) 0 0 calc(var(--radius-lg) - 1px);
+    background: var(--color-primary-fill);
+    mask:
+      linear-gradient(#000 0 0) left / calc(100% - var(--wave-width)) 100% no-repeat,
+      var(--wave-edge-right) right / var(--wave-width) 100% no-repeat;
+  }
+
+  .layer-secondary .layer-head {
+    background: var(--color-secondary-fill);
+  }
+
+  .layer-head::after {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: 0;
+    width: var(--wave-band);
+    background: var(--color-secondary-fill);
+    mask:
+      var(--wave-edge-left) left / var(--wave-width) 100% no-repeat,
+      linear-gradient(#000 0 0) right / calc(100% - var(--wave-width)) 100% no-repeat;
+  }
+
+  .layer-secondary .layer-head::after {
+    background: var(--color-primary-fill);
+  }
+
+  .layer .skill-list {
+    justify-content: flex-end;
+  }
 }
 
 .skill-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
-  gap: var(--space-2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
 }
 
 .skill {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-2) var(--space-3) var(--space-2) var(--space-2);
-  border-radius: var(--radius-md);
-  background: var(--color-surface-2);
-}
-
-.skill-wide {
-  grid-column: 1 / -1;
+  gap: var(--space-2);
+  min-width: 4.5rem;
+  text-align: center;
 }
 
 .skill-logo {
   display: grid;
   place-items: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  flex: none;
-  padding: 0.3rem;
-  border-radius: var(--radius-sm);
-  background: var(--color-logo-bg);
-  color: var(--secondary-600);
+  width: 3rem;
+  height: 3rem;
+  padding: 0.2rem;
+  color: var(--color-secondary);
 }
 
 .skill-logo img {
@@ -49,15 +155,19 @@
 }
 
 .skill-name {
-  display: flex;
-  flex-direction: column;
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   font-weight: var(--weight-semibold);
   line-height: 1.25;
 }
 
-.skill-note {
-  color: var(--color-muted);
-  font-size: var(--text-xs);
-  font-weight: var(--weight-regular);
+.skill-logo-dark {
+  display: none;
+}
+
+.dark .skill-logo-light {
+  display: none;
+}
+
+.dark .skill-logo-dark {
+  display: block;
 }

@@ -90,10 +90,24 @@
     "skills": {
       "title": "Stack tecnológico",
       "groups": {
-        "web": "Web",
-        "data": "Datos",
-        "infra": "Infra y herramientas"
-      }
+        "web": {
+          "title": "Desarrollo web",
+          "description": "Interfaces modernas y responsivas."
+        },
+        "backend": {
+          "title": "Backend",
+          "description": "APIs, lógica de negocio y servicios."
+        },
+        "data": {
+          "title": "Datos",
+          "description": "Análisis, visualización y gestión de datos."
+        },
+        "infra": {
+          "title": "Infraestructura y DevOps",
+          "description": "Despliegue, monitoreo y gestión de infraestructura."
+        }
+      },
+      "intro": "Estas son las tecnologías y herramientas con las que desarrollo, aprendo y construyo soluciones. Siempre en constante evolución."
     },
     "education": {
       "title": "Formación",
