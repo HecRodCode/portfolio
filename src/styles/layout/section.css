@@ -17,3 +17,24 @@
 .stack > .section-header {
   margin-bottom: 0;
 }
+
+/* Presentation-style slide: one full screen per section, content centered vertically */
+.slide {
+  justify-content: center;
+  align-content: center;
+}
+
+@media (min-width: 48rem) {
+  .slide,
+  .slide.anchor-target {
+    min-height: 100dvh;
+    padding-block: var(--space-8);
+    scroll-margin-top: 0;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .slide {
+    padding-block: var(--space-6);
+  }
+}

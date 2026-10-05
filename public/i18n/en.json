@@ -33,12 +33,40 @@
     "photoAlt": "Portrait of Héctor Ríos"
   },
   "about": {
-    "eyebrow": "Who I am",
     "title": "About me",
     "story": {
-      "p1": "My name is Héctor Ríos, I'm 20 years old and I'm from Medellín. I've loved computers for as long as I can remember, and over the years that curiosity became the path I want to follow.",
-      "p2": "I started in web development, learning to build interfaces, connect systems and take an idea to something functional that people could use. As I progressed, I discovered the world of data and was fascinated by it: understanding what is behind information, how it is organized and what can be drawn from it.",
-      "p3": "Today I'm on the advanced Data Analysis track at Riwi, where I also strengthen my soft skills, my emotional management and my English. Outside of class I keep learning on my own: I'm quite self-taught, so if something sparks my curiosity, I don't rest until I understand how it works."
+      "p1": "I'm 20 years old and I'm from Medellín. Computers have been with me for many years, and over time that curiosity became the path I want to follow.",
+      "path": {
+        "title": "How I started",
+        "text": "I started in web development with a pretty simple curiosity: I wanted to understand how the things I saw on the internet were built. My first contact with computing was studying a Systems Technician program at SENA. The more I learned, the more I wanted to understand what was behind it all: how systems connect and what happens to information. That curiosity led me to take my first steps as a backend developer."
+      },
+      "data": {
+        "title": "Discovering data",
+        "textBefore": "Later on, during my training at ",
+        "link": "Riwi",
+        "textAfter": ", a technology training center, I discovered the world of data. I became interested in how information is organized and how it can be used to better understand a problem."
+      }
+    },
+    "journey": {
+      "title": "My journey",
+      "steps": {
+        "web": {
+          "title": "Web development",
+          "detail": "Interfaces · Angular"
+        },
+        "backend": {
+          "title": "Backend",
+          "detail": "APIs · Node · Nest"
+        },
+        "data": {
+          "title": "Data",
+          "detail": "SQL · Python · BI"
+        },
+        "cloud": {
+          "title": "Cloud / Infrastructure",
+          "detail": "Linux · CI/CD · OVH · Cloudflare"
+        }
+      }
     },
     "facts": {
       "title": "At a glance",
