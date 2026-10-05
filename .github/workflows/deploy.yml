@@ -43,10 +43,13 @@ jobs:
       - name: Build
         run: pnpm build --base-href ${{ steps.base.outputs.href }}
 
-      # SPA fallback: Pages serves 404.html for unknown paths, so deep links like /es/projects/x load the app.
-      - name: SPA fallback and .nojekyll
+      # Every language/page is prerendered to its own index.html (HTTP 200). The client-rendered shell
+      # (index.csr.html) becomes the root page, which redirects to the preferred language, and the 404.html
+      # fallback for any unknown path.
+      - name: Root page, 404 fallback and .nojekyll
         run: |
-          cp dist/portfolio/browser/index.html dist/portfolio/browser/404.html
+          cp dist/portfolio/browser/index.csr.html dist/portfolio/browser/index.html
+          cp dist/portfolio/browser/index.csr.html dist/portfolio/browser/404.html
           touch dist/portfolio/browser/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3

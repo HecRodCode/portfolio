@@ -35,7 +35,8 @@ export class PaletteService {
 
   constructor() {
     effect(() => {
-      this.document.documentElement.dataset['palette'] = this.palette();
+      // setAttribute (not dataset): the server-side DOM used for prerendering has no `dataset`.
+      this.document.documentElement.setAttribute('data-palette', this.palette());
     });
   }
 

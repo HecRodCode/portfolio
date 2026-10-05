@@ -70,9 +70,14 @@ La imagen de referencia solo inspira la estructura. No copiar colores, imágenes
 - Contacto: solo enlaces (email y redes); sin formularios ni backend.
 - Proyectos: lista + detalle `/:lang/projects/:slug`. Datos tipados en `src/app/data/`, textos en i18n. Detalle breve y verificable (resumen, problema, rol, 3–4 highlights, stack, enlaces); sin métricas ni logros inventados ni exageraciones.
 
+## Prerender (SSG)
+- El build pre-renderiza cada página de cada idioma como HTML real (`dist/.../es/about/index.html`), para que GitHub Pages responda 200 y los buscadores vean el contenido. Config: `src/app/app.routes.server.ts`, `app.config.server.ts`, `main.server.ts`.
+- **Toda ruta nueva bajo `/:lang` debe añadirse a `app.routes.server.ts`** (con `getPrerenderParams` para `es`/`en`; las rutas con `:slug` deben devolver también los slugs). Si no, queda como cliente y vuelve el problema del 404.
+- El código debe poder ejecutarse en el servidor: acceder a `window`, `localStorage`, `matchMedia`, etc. solo vía `DOCUMENT.defaultView` con optional chaining y `try/catch`. No usar `element.dataset` (no existe en el DOM del servidor): usar `setAttribute`.
+
 ## Despliegue (GitHub Pages)
 - Merge/push a `main` despliega vía GitHub Actions (`deploy.yml`); en PRs hacia `main` corre solo `ci.yml` (build + tests). Pages con Source = GitHub Actions.
-- Build con `--base-href /<repo>/`; copiar `index.html` a `404.html` para el fallback SPA; incluir `.nojekyll`.
+- Build con `--base-href /<repo>/`; tras el build copiar `index.csr.html` a `index.html` (raíz, redirige al idioma) y a `404.html` (rutas desconocidas); incluir `.nojekyll`.
 - No usar rutas absolutas a assets (`/img/..`); deben respetar el base href.
 - Deploy por GitHub Actions (`pnpm`, build, `actions/deploy-pages`).
 
