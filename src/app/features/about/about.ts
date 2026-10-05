@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { EXPERIENCE } from '../../data/experience';
 import { SKILL_GROUPS } from '../../data/skills';
+import { ExternalLink } from '../../shared/directives/external-link';
 import { Icon } from '../../shared/ui/icon/icon';
 
 /** Sections of the page, in display order. They double as the in-page index and URL fragments. */
@@ -18,7 +19,7 @@ type SectionId = (typeof SECTIONS)[number];
 
 @Component({
   selector: 'app-about',
-  imports: [RouterLink, TranslocoPipe, Icon],
+  imports: [RouterLink, TranslocoPipe, Icon, ExternalLink],
   templateUrl: './about.html',
   host: { '(window:scroll)': 'onScroll()' },
   changeDetection: ChangeDetectionStrategy.OnPush,

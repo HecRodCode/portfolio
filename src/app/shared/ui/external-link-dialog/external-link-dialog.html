@@ -1,0 +1,32 @@
+<dialog
+  #dialog
+  class="dialog"
+  aria-labelledby="external-dialog-title"
+  aria-describedby="external-dialog-text"
+  (close)="onClosed()"
+  (click)="onClick($event)"
+>
+  <div class="dialog-body">
+    <h2 id="external-dialog-title" class="dialog-title">
+      {{ 'externalDialog.title' | transloco }}
+    </h2>
+    <p id="external-dialog-text" class="text-muted">
+      {{ 'externalDialog.text' | transloco: { host: links.request()?.host ?? '' } }}
+    </p>
+    <div class="cluster dialog-actions">
+      <button type="button" class="btn btn-outline" autofocus (click)="dialog.close()">
+        {{ 'externalDialog.cancel' | transloco }}
+      </button>
+      <a
+        class="btn btn-primary"
+        [href]="links.request()?.url ?? null"
+        target="_blank"
+        rel="noopener noreferrer"
+        (click)="dialog.close()"
+      >
+        {{ 'externalDialog.confirm' | transloco }}
+        <span class="visually-hidden">{{ 'a11y.newTab' | transloco }}</span>
+      </a>
+    </div>
+  </div>
+</dialog>
