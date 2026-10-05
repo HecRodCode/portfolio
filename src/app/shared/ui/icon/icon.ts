@@ -12,6 +12,7 @@ const ICONS = {
   moon: ['M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z'],
   pin: ['M9 3h6l-1 6 3 3v2H7v-2l3-3z', 'M12 14v7'],
   'pin-off': ['M9 3h6l-1 6 3 3v2H7v-2l3-3z', 'M12 14v7', 'M4 4l16 16'],
+  'arrow-right': ['M5 12h14', 'M13 6l6 6-6 6'],
   menu: ['M4 6h16M4 12h16M4 18h16'],
   close: ['M6 6l12 12M18 6L6 18'],
 } as const;

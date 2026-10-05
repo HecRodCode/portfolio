@@ -21,7 +21,17 @@
   "language": {
     "toggle": "Cambiar idioma"
   },
-  "home": {},
+  "home": {
+    "greeting": "Hola, soy",
+    "role": "Desarrollador web y de datos",
+    "intro": "La informática me encanta desde que tengo memoria, y con los años se volvió mi trabajo. Fuera de la pantalla me encuentras en la bici o rodeado de gatos :)",
+    "cta": {
+      "about": "Sobre mí",
+      "projects": "Ver proyectos",
+      "contact": "Contacto"
+    },
+    "photoAlt": "Retrato de Héctor Ríos"
+  },
   "about": {},
   "projects": {},
   "contact": {},

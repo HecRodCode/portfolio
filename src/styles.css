@@ -13,6 +13,7 @@
 @import './styles/layout/stack.css';
 @import './styles/layout/cluster.css';
 @import './styles/layout/grid.css';
+@import './styles/layout/hero.css';
 @import './styles/layout/shell.css';
 @import './styles/layout/sidebar.css';
 @import './styles/layout/site-controls.css';
