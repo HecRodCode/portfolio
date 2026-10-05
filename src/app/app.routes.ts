@@ -17,10 +17,12 @@ export const routes: Routes = [
         path: '',
         pathMatch: 'full',
         loadComponent: () => import('./features/home/home').then((m) => m.Home),
+        data: { titleKey: 'nav.home' },
       },
       {
         path: 'about',
         loadComponent: () => import('./features/about/about').then((m) => m.About),
+        data: { titleKey: 'nav.about' },
       },
       { path: 'projects', loadComponent: placeholder, data: { titleKey: 'nav.projects' } },
       { path: 'contact', loadComponent: placeholder, data: { titleKey: 'nav.contact' } },

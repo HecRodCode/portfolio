@@ -4,6 +4,7 @@
       type="button"
       class="toggle-option"
       [attr.lang]="lang"
+      [attr.aria-label]="'language.names.' + lang | transloco"
       [attr.aria-pressed]="languageService.current() === lang"
       (click)="languageService.switchTo(lang)"
     >

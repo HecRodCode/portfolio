@@ -1,9 +1,9 @@
 <div class="container toc-layout">
   <div>
-    <section id="story" class="slide split anchor-target">
+    <section id="story" class="slide split anchor-target" aria-labelledby="about-title">
       <div class="stack stack-lg">
         <header class="section-header">
-          <h1 class="heading-1">{{ 'about.title' | transloco }}</h1>
+          <h1 id="about-title" class="heading-1">{{ 'about.title' | transloco }}</h1>
         </header>
 
         <div class="stack">
@@ -108,7 +108,7 @@
             <div class="layer-head">
               <span class="layer-icon" aria-hidden="true"><app-icon [name]="group.icon" /></span>
               <div>
-                <h3 class="layer-title">
+                <h3 class="layer-title" [attr.id]="'stack-' + group.key">
                   {{ 'about.skills.groups.' + group.key + '.title' | transloco }}
                 </h3>
                 <p class="layer-text">
@@ -116,7 +116,7 @@
                 </p>
               </div>
             </div>
-            <ul class="skill-list list-plain">
+            <ul class="skill-list list-plain" [attr.aria-labelledby]="'stack-' + group.key">
               @for (skill of group.items; track skill.name) {
                 <li class="skill">
                   <span class="skill-logo" aria-hidden="true">

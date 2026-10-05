@@ -19,7 +19,11 @@
     "dark": "Dark"
   },
   "language": {
-    "toggle": "Change language"
+    "toggle": "Change language",
+    "names": {
+      "es": "Español",
+      "en": "English"
+    }
   },
   "home": {
     "greeting": "Hi, I'm",
