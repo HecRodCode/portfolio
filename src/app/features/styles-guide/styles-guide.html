@@ -8,23 +8,26 @@
           Every style used by the portfolio, in one place. Tune the palette and fonts here.
         </p>
       </div>
-      <div class="toggle" role="group" aria-label="Theme">
-        <button
-          type="button"
-          class="toggle-option"
-          [attr.aria-pressed]="themeService.theme() === 'light'"
-          (click)="themeService.set('light')"
-        >
-          Light
-        </button>
-        <button
-          type="button"
-          class="toggle-option"
-          [attr.aria-pressed]="themeService.theme() === 'dark'"
-          (click)="themeService.set('dark')"
-        >
-          Dark
-        </button>
+      <div class="cluster">
+        <app-language-switcher />
+        <div class="toggle" role="group" aria-label="Theme">
+          <button
+            type="button"
+            class="toggle-option"
+            [attr.aria-pressed]="themeService.theme() === 'light'"
+            (click)="themeService.set('light')"
+          >
+            Light
+          </button>
+          <button
+            type="button"
+            class="toggle-option"
+            [attr.aria-pressed]="themeService.theme() === 'dark'"
+            (click)="themeService.set('dark')"
+          >
+            Dark
+          </button>
+        </div>
       </div>
     </header>
 

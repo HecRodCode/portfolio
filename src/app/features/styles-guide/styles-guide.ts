@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ThemeService } from '../../core/theme/theme.service';
+import { LanguageSwitcher } from '../../shared/ui/language-switcher/language-switcher';
 
 interface Swatch {
   readonly name: string;
@@ -17,6 +18,7 @@ const scale = (name: string): Swatch[] =>
  */
 @Component({
   selector: 'app-styles-guide',
+  imports: [LanguageSwitcher],
   templateUrl: './styles-guide.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
