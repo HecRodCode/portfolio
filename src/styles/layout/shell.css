@@ -1,0 +1,21 @@
+/* Page frame: content is offset by the sidebar width (collapsed rail, or expanded when pinned). */
+.shell {
+  --sidebar-offset: var(--sidebar-collapsed);
+}
+
+.shell.is-sidebar-pinned {
+  --sidebar-offset: var(--sidebar-expanded);
+}
+
+.shell-main {
+  min-height: 100dvh;
+  margin-inline-start: var(--sidebar-offset);
+  transition: margin-inline-start var(--duration-sidebar) var(--ease-smooth);
+}
+
+@media (max-width: 47.99rem) {
+  .shell-main {
+    min-height: auto;
+    margin-inline-start: 0;
+  }
+}

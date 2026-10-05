@@ -1,11 +1,47 @@
 {
-  "nav": { "home": "Home", "about": "About", "projects": "Projects", "contact": "Contact" },
-  "sidebar": { "pin": "Pin sidebar", "unpin": "Unpin sidebar" },
-  "theme": { "toggle": "Toggle theme", "light": "Light", "dark": "Dark" },
-  "language": { "toggle": "Change language" },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "label": "Main navigation"
+  },
+  "sidebar": {
+    "pin": "Pin sidebar",
+    "unpin": "Unpin sidebar",
+    "open": "Open menu",
+    "close": "Close menu",
+    "menu": "Menu"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "toggle": "Change language"
+  },
   "home": {},
   "about": {},
   "projects": {},
   "contact": {},
-  "cv": { "download": "Download CV" }
+  "cv": {
+    "download": "Download CV"
+  },
+  "palette": {
+    "label": "Color palette",
+    "options": {
+      "red-blue": "Red and blue",
+      "teal-coral": "Teal and coral",
+      "indigo-rose": "Indigo and rose",
+      "forest-terracotta": "Forest green and terracotta",
+      "plum-ochre": "Plum and ochre",
+      "slate-tangerine": "Slate and tangerine",
+      "cobalt-mint": "Cobalt and mint"
+    }
+  },
+  "placeholder": {
+    "soon": "This section is under construction."
+  },
+  "skip": "Skip to content"
 }

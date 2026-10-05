@@ -1,0 +1,8 @@
+<div class="shell" [class.is-sidebar-pinned]="layout.pinned()">
+  <a class="skip-link" href="#main">{{ 'skip' | transloco }}</a>
+  <app-sidebar />
+  <app-mobile-menu />
+  <main id="main" class="shell-main">
+    <router-outlet />
+  </main>
+</div>

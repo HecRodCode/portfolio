@@ -1,0 +1,47 @@
+<aside class="sidebar" [class.is-pinned]="layout.pinned()">
+  <div class="sidebar-clip">
+    <div class="sidebar-inner">
+      <div class="sidebar-top">
+        <button
+          type="button"
+          class="btn btn-ghost btn-icon sidebar-pin"
+          [attr.aria-pressed]="layout.pinned()"
+          [attr.aria-label]="(layout.pinned() ? 'sidebar.unpin' : 'sidebar.pin') | transloco"
+          (click)="togglePin()"
+        >
+          <app-icon [name]="layout.pinned() ? 'pin-off' : 'pin'" />
+        </button>
+      </div>
+
+      <app-site-nav />
+
+      <!-- Two stacked blocks that cross-fade: the compact rail controls and the full controls. -->
+      <div class="sidebar-bottom">
+        <div class="sidebar-bottom-rail">
+          <button
+            type="button"
+            class="palette-option"
+            aria-haspopup="dialog"
+            [attr.aria-expanded]="paletteOpen()"
+            [attr.aria-label]="'palette.label' | transloco"
+            [attr.tabindex]="layout.pinned() ? -1 : 0"
+            (click)="paletteOpen.set(!paletteOpen())"
+          >
+            <span class="palette-chip" [attr.data-palette]="palette()" aria-hidden="true"></span>
+          </button>
+          <app-site-controls [compact]="true" />
+        </div>
+        <div class="sidebar-bottom-full">
+          <app-site-controls />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Outside the clipped area so it can sit beside the rail -->
+  @if (paletteOpen() && !layout.pinned()) {
+    <div class="palette-popover" role="dialog" [attr.aria-label]="'palette.label' | transloco">
+      <app-palette-picker (chosen)="paletteOpen.set(false)" />
+    </div>
+  }
+</aside>

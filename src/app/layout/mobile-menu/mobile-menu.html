@@ -1,0 +1,41 @@
+<header class="mobile-bar">
+  <a class="sidebar-brand" [routerLink]="['/', lang()]" [attr.aria-label]="site.name">
+    {{ site.initials }}
+  </a>
+  <button
+    #openButton
+    type="button"
+    class="btn btn-ghost btn-icon"
+    aria-controls="mobile-menu"
+    [attr.aria-expanded]="layout.menuOpen()"
+    [attr.aria-label]="'sidebar.open' | transloco"
+    (click)="layout.openMenu()"
+  >
+    <app-icon name="menu" />
+  </button>
+</header>
+
+@if (layout.menuOpen()) {
+  <div
+    id="mobile-menu"
+    class="mobile-menu"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="'sidebar.menu' | transloco"
+  >
+    <div class="mobile-menu-top">
+      <span class="sidebar-brand" aria-hidden="true">{{ site.initials }}</span>
+      <button
+        #closeButton
+        type="button"
+        class="btn btn-ghost btn-icon"
+        [attr.aria-label]="'sidebar.close' | transloco"
+        (click)="close()"
+      >
+        <app-icon name="close" />
+      </button>
+    </div>
+    <app-site-nav (navigated)="close()" />
+    <app-site-controls />
+  </div>
+}

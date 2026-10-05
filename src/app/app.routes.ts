@@ -1,15 +1,22 @@
 import { Routes } from '@angular/router';
 import { langActivate, langMatch, redirectToPreferredLang } from './core/i18n/language.guards';
 
+const placeholder = () =>
+  import('./features/placeholder/placeholder-page').then((m) => m.PlaceholderPage);
+
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: redirectToPreferredLang },
   {
     path: ':lang',
     canMatch: [langMatch],
     canActivate: [langActivate],
+    loadComponent: () => import('./layout/shell/shell').then((m) => m.Shell),
     children: [
-      // Temporary: the real home arrives with the layout and features branches.
-      { path: '', pathMatch: 'full', redirectTo: 'styles' },
+      // Temporary pages: each section replaces its placeholder in its own feature branch.
+      { path: '', pathMatch: 'full', loadComponent: placeholder, data: { titleKey: 'nav.home' } },
+      { path: 'about', loadComponent: placeholder, data: { titleKey: 'nav.about' } },
+      { path: 'projects', loadComponent: placeholder, data: { titleKey: 'nav.projects' } },
+      { path: 'contact', loadComponent: placeholder, data: { titleKey: 'nav.contact' } },
       {
         path: 'styles',
         loadComponent: () =>
