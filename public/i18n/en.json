@@ -1,0 +1,11 @@
+{
+  "nav": { "home": "Home", "about": "About", "projects": "Projects", "contact": "Contact" },
+  "sidebar": { "pin": "Pin sidebar", "unpin": "Unpin sidebar" },
+  "theme": { "toggle": "Toggle theme", "light": "Light", "dark": "Dark" },
+  "language": { "toggle": "Change language" },
+  "home": {},
+  "about": {},
+  "projects": {},
+  "contact": {},
+  "cv": { "download": "Download CV" }
+}

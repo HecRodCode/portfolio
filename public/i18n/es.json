@@ -1,0 +1,11 @@
+{
+  "nav": { "home": "Inicio", "about": "Sobre mí", "projects": "Proyectos", "contact": "Contacto" },
+  "sidebar": { "pin": "Fijar barra lateral", "unpin": "Soltar barra lateral" },
+  "theme": { "toggle": "Cambiar tema", "light": "Claro", "dark": "Oscuro" },
+  "language": { "toggle": "Cambiar idioma" },
+  "home": {},
+  "about": {},
+  "projects": {},
+  "contact": {},
+  "cv": { "download": "Descargar CV" }
+}
