@@ -1,0 +1,20 @@
+/* Horizontal group that wraps */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.cluster-sm {
+  gap: var(--space-2);
+}
+.cluster-lg {
+  gap: var(--space-5);
+}
+.cluster-between {
+  justify-content: space-between;
+}
+.cluster-center {
+  justify-content: center;
+}

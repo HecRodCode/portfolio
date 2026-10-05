@@ -1,3 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
-
+/* Single entry point: every style lives in src/styles/ and is reused by type. */
 @import 'tailwindcss';
+
+@import './styles/base/fonts.css';
+@import './styles/base/theme.css';
+@import './styles/base/reset.css';
+@import './styles/base/typography.css';
+@import './styles/base/a11y.css';
+
+@import './styles/layout/container.css';
+@import './styles/layout/section.css';
+@import './styles/layout/stack.css';
+@import './styles/layout/cluster.css';
+@import './styles/layout/grid.css';
+
+@import './styles/components/button.css';
+@import './styles/components/card.css';
+@import './styles/components/tag.css';
+@import './styles/components/link.css';
+@import './styles/components/nav-item.css';
+@import './styles/components/toggle.css';
+@import './styles/components/divider.css';
+@import './styles/components/icon.css';
+@import './styles/components/swatch.css';
