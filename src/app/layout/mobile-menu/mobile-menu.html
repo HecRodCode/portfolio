@@ -1,4 +1,4 @@
-<header class="mobile-bar">
+<header class="mobile-bar" [attr.inert]="layout.menuOpen() ? '' : null">
   <button
     #openButton
     type="button"

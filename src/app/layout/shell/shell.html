@@ -1,8 +1,15 @@
 <div class="shell" [class.is-sidebar-pinned]="layout.pinned()">
-  <a class="skip-link" href="#main">{{ 'skip' | transloco }}</a>
+  <a
+    class="skip-link"
+    href="#main"
+    [attr.inert]="layout.menuOpen() ? '' : null"
+    (click)="skipToContent($event)"
+  >
+    {{ 'skip' | transloco }}
+  </a>
   <app-sidebar />
   <app-mobile-menu />
-  <main id="main" class="shell-main">
+  <main id="main" class="shell-main" tabindex="-1" [attr.inert]="layout.menuOpen() ? '' : null">
     <router-outlet />
   </main>
   <app-external-link-dialog />

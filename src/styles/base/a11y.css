@@ -4,6 +4,12 @@
   border-radius: var(--radius-sm);
 }
 
+/* Programmatic focus targets after a page change: not interactive, so no ring around them */
+main[tabindex='-1']:focus-visible,
+h1[tabindex='-1']:focus-visible {
+  outline: none;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

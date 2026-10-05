@@ -30,4 +30,16 @@ describe('MobileMenu', () => {
     await fixture.whenStable();
     expect(root.querySelector('#mobile-menu')).toBeNull();
   });
+
+  it('makes the top bar inert while the menu is open, so focus cannot leave it', async () => {
+    const fixture = TestBed.createComponent(MobileMenu);
+    const root = fixture.nativeElement as HTMLElement;
+    await fixture.whenStable();
+    const bar = root.querySelector('.mobile-bar')!;
+    expect(bar.hasAttribute('inert')).toBe(false);
+
+    root.querySelector<HTMLButtonElement>('header button')!.click();
+    await fixture.whenStable();
+    expect(bar.hasAttribute('inert')).toBe(true);
+  });
 });
