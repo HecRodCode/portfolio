@@ -1,0 +1,13 @@
+<div class="toggle" role="group" [attr.aria-label]="'language.toggle' | transloco">
+  @for (lang of langs; track lang) {
+    <button
+      type="button"
+      class="toggle-option"
+      [attr.lang]="lang"
+      [attr.aria-pressed]="languageService.current() === lang"
+      (click)="languageService.switchTo(lang)"
+    >
+      {{ lang }}
+    </button>
+  }
+</div>
