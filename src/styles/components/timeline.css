@@ -1,0 +1,44 @@
+/* Vertical timeline: a line with one marker per item */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-inline-start: var(--space-6);
+  border-inline-start: 2px solid var(--color-border);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0.35rem;
+  inset-inline-start: calc(-1 * var(--space-6) - 0.4rem);
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-fill);
+  box-shadow: 0 0 0 4px var(--color-bg);
+}
+
+.timeline-period {
+  color: var(--color-primary);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.timeline-title {
+  font-size: var(--text-xl);
+}
+
+.timeline-place {
+  font-weight: var(--weight-medium);
+}

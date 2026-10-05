@@ -1,6 +1,6 @@
 /* Ticket-stub label: solid fill with half-circle notches on both sides. */
 .tag {
-  --tag-fill: var(--color-surface-2);
+  --tag-fill: var(--color-border-strong);
   --tag-on: var(--color-text);
   --tag-notch: 0.32rem;
   display: inline-flex;

@@ -136,6 +136,7 @@
   --color-secondary-hover: var(--secondary-700);
 
   --color-on-fill: oklch(1 0 0); /* text over brand fills */
+  --color-logo-bg: oklch(1 0 0); /* light chip behind brand logos, in both themes */
   --color-focus: var(--secondary-600);
   --color-overlay: oklch(0.2 0.012 260 / 0.4);
 

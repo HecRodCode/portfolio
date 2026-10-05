@@ -18,7 +18,10 @@ export const routes: Routes = [
         pathMatch: 'full',
         loadComponent: () => import('./features/home/home').then((m) => m.Home),
       },
-      { path: 'about', loadComponent: placeholder, data: { titleKey: 'nav.about' } },
+      {
+        path: 'about',
+        loadComponent: () => import('./features/about/about').then((m) => m.About),
+      },
       { path: 'projects', loadComponent: placeholder, data: { titleKey: 'nav.projects' } },
       { path: 'contact', loadComponent: placeholder, data: { titleKey: 'nav.contact' } },
       {

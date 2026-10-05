@@ -59,6 +59,12 @@ li::marker {
   color: var(--color-primary);
 }
 
+/* Lists used as layout (tag groups, timelines): no bullets, no indent */
+.list-plain {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
 blockquote {
   padding-inline-start: var(--space-4);
   border-inline-start: 3px solid var(--color-primary-fill);
@@ -123,6 +129,9 @@ hr {
   font-size: var(--text-lg);
   line-height: var(--leading-relaxed);
   color: var(--color-muted);
+}
+.lead-strong {
+  color: var(--color-text);
 }
 .text-muted {
   color: var(--color-muted);

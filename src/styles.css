@@ -14,6 +14,8 @@
 @import './styles/layout/cluster.css';
 @import './styles/layout/grid.css';
 @import './styles/layout/hero.css';
+@import './styles/layout/split.css';
+@import './styles/layout/toc-layout.css';
 @import './styles/layout/shell.css';
 @import './styles/layout/sidebar.css';
 @import './styles/layout/site-controls.css';
@@ -28,4 +30,8 @@
 @import './styles/components/divider.css';
 @import './styles/components/icon.css';
 @import './styles/components/palette-picker.css';
+@import './styles/components/facts.css';
+@import './styles/components/skill.css';
+@import './styles/components/timeline.css';
+@import './styles/components/toc.css';
 @import './styles/components/swatch.css';

@@ -1,0 +1,133 @@
+<section class="section">
+  <div class="container toc-layout">
+    <div class="stack stack-xl">
+      <section id="story" class="stack stack-xl anchor-target">
+        <header class="section-header">
+          <span class="eyebrow">{{ 'about.eyebrow' | transloco }}</span>
+          <h1 class="heading-1">{{ 'about.title' | transloco }}</h1>
+        </header>
+
+        <div class="split">
+          <div class="stack">
+            <p>{{ 'about.story.p1' | transloco }}</p>
+            <p>{{ 'about.story.p2' | transloco }}</p>
+            <p>{{ 'about.story.p3' | transloco }}</p>
+          </div>
+
+          <aside class="card facts-card" [attr.aria-label]="'about.facts.title' | transloco">
+            <h2 class="facts-banner">{{ 'about.facts.title' | transloco }}</h2>
+            <dl class="facts">
+              @for (fact of facts; track fact.key) {
+                <div class="facts-row">
+                  <span class="facts-icon" aria-hidden="true"><app-icon [name]="fact.icon" /></span>
+                  <div class="facts-text">
+                    <dt class="facts-label">
+                      {{ 'about.facts.' + fact.key + '.label' | transloco }}
+                    </dt>
+                    <dd class="facts-value">
+                      {{ 'about.facts.' + fact.key + '.value' | transloco }}
+                    </dd>
+                  </div>
+                </div>
+              }
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section id="experience" class="stack anchor-target" aria-labelledby="experience-title">
+        <h2 id="experience-title" class="heading-3">{{ 'about.experience.title' | transloco }}</h2>
+        @if (experience.length) {
+          <ol class="timeline list-plain">
+            @for (item of experience; track item.key) {
+              <li class="timeline-item">
+                <span class="timeline-period">
+                  {{ 'about.experience.items.' + item.key + '.period' | transloco }}
+                </span>
+                <h3 class="timeline-title">
+                  {{ 'about.experience.items.' + item.key + '.role' | transloco }}
+                </h3>
+                <p class="timeline-place">
+                  {{ 'about.experience.items.' + item.key + '.place' | transloco }}
+                </p>
+                <p class="text-muted">
+                  {{ 'about.experience.items.' + item.key + '.description' | transloco }}
+                </p>
+              </li>
+            }
+          </ol>
+        } @else {
+          <p class="card text-muted">{{ 'about.experience.empty' | transloco }}</p>
+        }
+      </section>
+
+      <section id="stack" class="stack anchor-target" aria-labelledby="skills-title">
+        <h2 id="skills-title" class="heading-3">{{ 'about.skills.title' | transloco }}</h2>
+        <div class="grid grid-3">
+          @for (group of skillGroups; track group.key) {
+            <article [class]="'card skill-group skill-group-' + group.tone">
+              <h3 class="card-title">{{ 'about.skills.groups.' + group.key | transloco }}</h3>
+              <ul class="skill-list list-plain">
+                @for (skill of group.items; track skill.name) {
+                  <li class="skill" [class.skill-wide]="skill.wide">
+                    <span class="skill-logo" aria-hidden="true">
+                      @if (skill.logo) {
+                        <img
+                          [src]="'images/tech/' + skill.logo + '.svg'"
+                          alt=""
+                          width="32"
+                          height="32"
+                          loading="lazy"
+                        />
+                      } @else if (skill.icon) {
+                        <app-icon [name]="skill.icon" />
+                      }
+                    </span>
+                    <span class="skill-name">
+                      {{ skill.name }}
+                      @if (skill.note) {
+                        <small class="skill-note">{{ skill.note }}</small>
+                      }
+                    </span>
+                  </li>
+                }
+              </ul>
+            </article>
+          }
+        </div>
+      </section>
+
+      <section id="education" class="stack anchor-target" aria-labelledby="education-title">
+        <h2 id="education-title" class="heading-3">{{ 'about.education.title' | transloco }}</h2>
+        <ol class="timeline list-plain">
+          <li class="timeline-item">
+            <span class="timeline-period">{{ 'about.education.riwi.period' | transloco }}</span>
+            <h3 class="timeline-title">{{ 'about.education.riwi.title' | transloco }}</h3>
+            <p class="timeline-place">{{ 'about.education.riwi.place' | transloco }}</p>
+            <p class="text-muted">{{ 'about.education.riwi.description' | transloco }}</p>
+          </li>
+        </ol>
+      </section>
+    </div>
+
+    <!-- In-page index (fixed at the screen edge): no numbers, just the sections. Fragment links keep working under <base href>. -->
+    <nav class="toc" [attr.aria-label]="'about.toc.label' | transloco">
+      <ul class="toc-list list-plain">
+        @for (id of sections; track id) {
+          <li>
+            <a
+              class="toc-link"
+              routerLink="."
+              [fragment]="id"
+              [class.is-active]="active() === id"
+              [attr.aria-current]="active() === id ? 'location' : null"
+              (click)="select(id)"
+            >
+              {{ 'about.toc.' + id | transloco }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+  </div>
+</section>
