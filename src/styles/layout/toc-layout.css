@@ -1,0 +1,52 @@
+/* In-page index pinned to the right edge of the screen, vertically centered. Where the margin beside the
+   content is too narrow to hold it, the content gets extra end padding so the two never overlap. */
+.toc {
+  display: none;
+}
+
+.toc-layout {
+  --toc-width: 9.5rem;
+  --toc-edge: var(--space-5);
+  /* room taken from the content: the index, its distance to the edge and a gap before the text */
+  --toc-reserve: calc(var(--toc-width) + var(--toc-edge) + var(--space-5));
+}
+
+@media (min-width: 75rem) {
+  .toc {
+    position: fixed;
+    top: 50%;
+    inset-inline-end: var(--toc-edge);
+    display: block;
+    width: var(--toc-width);
+    transform: translateY(-50%);
+  }
+
+  .toc-layout {
+    padding-inline-end: var(--toc-reserve);
+  }
+}
+
+/* Wide screens: the margin beside the 72rem content is already enough */
+@media (min-width: 98.5rem) {
+  .toc-layout {
+    padding-inline-end: var(--gutter);
+  }
+}
+
+/* ...unless the sidebar is pinned, which takes room from that margin */
+@media (min-width: 98.5rem) and (max-width: 107.99rem) {
+  .is-sidebar-pinned .toc-layout {
+    padding-inline-end: var(--toc-reserve);
+  }
+}
+
+/* Jumping to a section leaves room above it (and under the sticky mobile bar) */
+.anchor-target {
+  scroll-margin-top: var(--space-7);
+}
+
+@media (max-width: 47.99rem) {
+  .anchor-target {
+    scroll-margin-top: 5.5rem;
+  }
+}

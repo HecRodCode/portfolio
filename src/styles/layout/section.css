@@ -12,3 +12,8 @@
   gap: var(--space-2);
   margin-bottom: var(--space-6);
 }
+
+/* Inside a stack the stack's own gap already separates the header */
+.stack > .section-header {
+  margin-bottom: 0;
+}

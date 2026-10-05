@@ -32,7 +32,62 @@
     },
     "photoAlt": "Portrait of Héctor Ríos"
   },
-  "about": {},
+  "about": {
+    "eyebrow": "Who I am",
+    "title": "About me",
+    "story": {
+      "p1": "My name is Héctor Ríos, I'm 20 years old and I'm from Medellín. I've loved computers for as long as I can remember, and over the years that curiosity became the path I want to follow.",
+      "p2": "I started in web development, learning to build interfaces, connect systems and take an idea to something functional that people could use. As I progressed, I discovered the world of data and was fascinated by it: understanding what is behind information, how it is organized and what can be drawn from it.",
+      "p3": "Today I'm on the advanced Data Analysis track at Riwi, where I also strengthen my soft skills, my emotional management and my English. Outside of class I keep learning on my own: I'm quite self-taught, so if something sparks my curiosity, I don't rest until I understand how it works."
+    },
+    "facts": {
+      "title": "At a glance",
+      "location": {
+        "label": "Location",
+        "value": "Medellín, Colombia"
+      },
+      "studying": {
+        "label": "Studying",
+        "value": "Data Analysis · Riwi"
+      },
+      "focus": {
+        "label": "Focus",
+        "value": "Web development and data"
+      },
+      "learning": {
+        "label": "How I learn",
+        "value": "Self-taught"
+      }
+    },
+    "skills": {
+      "title": "Tech stack",
+      "groups": {
+        "web": "Web",
+        "data": "Data",
+        "infra": "Infra & tools"
+      }
+    },
+    "education": {
+      "title": "Education",
+      "riwi": {
+        "period": "In progress",
+        "title": "Advanced Data Analysis track",
+        "place": "Riwi",
+        "description": "Besides the technical side, I'm strengthening soft skills, emotional management and English."
+      }
+    },
+    "toc": {
+      "label": "On this page",
+      "story": "About me",
+      "experience": "Experience",
+      "stack": "Stack",
+      "education": "Education"
+    },
+    "experience": {
+      "title": "Experience",
+      "empty": "My professional experience will be added here."
+    }
+  },
   "projects": {},
   "contact": {},
   "cv": {
